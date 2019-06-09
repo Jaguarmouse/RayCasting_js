@@ -25,20 +25,20 @@ class Particle {
   }
 
   emit(walls) {
-    const edges = walls.reduce((arr, cur) => {
-      const v1 = p5.Vector.sub(cur.a, this.pos);
-      const v2 = p5.Vector.sub(cur.b, this.pos);
-      const ray1 = new Ray(this.pos.x, this.pos.y, v1.heading());
-      const ray2 = new Ray(this.pos.x, this.pos.y, v2.heading());
-      arr.push(ray1, ray2);
-      return arr;
-    }, []);
+//    const edges = walls.reduce((arr, cur) => {
+//      const v1 = p5.Vector.sub(cur.a, this.pos);
+//      const v2 = p5.Vector.sub(cur.b, this.pos);
+//      const ray1 = new Ray(this.pos.x, this.pos.y, v1.heading());
+//      const ray2 = new Ray(this.pos.x, this.pos.y, v2.heading());
+//      arr.push(ray1, ray2);
+//      return arr;
+//    }, []);
 
     const projections = [];
 
     const newRays = this.rays
-      .concat(edges)
-      .sort((a,b) => a.dir.heading() - b.dir.heading());
+//      .concat(edges)
+//      .sort((a,b) => a.dir.heading() - b.dir.heading());
 
     for (const ray of newRays) {
       let record = Infinity;
