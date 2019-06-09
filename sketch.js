@@ -1,6 +1,8 @@
 let walls = [];
 let particle;
 
+let showWalls = false;
+
 function setup() {
   createCanvas(400, 400);
 
@@ -16,11 +18,17 @@ function setup() {
   particle = new Particle(width * 0.5, height * 0.5);
 }
 
+function mousePressed() {
+  showWalls = !showWalls;
+}
+
 function draw() {
   background(0);
   
-  for (const wall of walls) {
-    wall.show();
+  if (showWalls) {
+    for (const wall of walls) {
+      wall.show();
+    }
   }
 
   particle.update(mouseX, mouseY);
